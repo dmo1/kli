@@ -1,0 +1,58 @@
+/* ==========================================================================
+  Navigation
+  ========================================================================== */
+
+
+.navigation, 
+.navigation ul
+{
+    list-style: none;
+    padding: 0;
+}
+
+.navigation a
+{
+    display: block;
+    text-decoration: none;
+    padding: @padding;
+}
+
+.navigation li
+{
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li:hover
+{
+    background: @colorMenuHover;
+}
+
+.navigation ul
+{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: @colorMenuActive;
+    padding: 0;
+}
+
+.navigation ul li
+{
+    float: none;
+    width: 200px;
+}
+
+.navigation ul ul
+{
+    top: 0;
+    left: 100%;
+}
+
+.navigation li:hover > ul
+{
+    display: block;
+}
