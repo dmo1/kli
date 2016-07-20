@@ -14,7 +14,7 @@
 {
     display: block;
     text-decoration: none;
-    padding: @padding;
+    padding: $padding;
 }
 
 .navigation li
@@ -27,7 +27,7 @@
 
 .navigation li:hover
 {
-    background: @colorMenuHover;
+    background: $colorMenuHover;
 }
 
 .navigation ul
@@ -36,7 +36,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: @colorMenuActive;
+    background: $colorMenuActive;
     padding: 0;
 }
 

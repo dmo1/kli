@@ -2,7 +2,6 @@ var Site = Site || {};
 Site.main = function () {
     var root = 'http://jsonplaceholder.typicode.com';
 
-
     animateLoading(true);
     Site.ajax((root + '/posts'), printPostList);
 

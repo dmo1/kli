@@ -5,9 +5,9 @@
     z-index: 7;
     width: 100%;
     max-width: 1024px;
-    min-height: @headerHeight;
-    border-bottom: 1px solid @colorLightGrey;
-    background-color: @colorWhite;
+    min-height: $headerHeight;
+    border-bottom: 1px solid $colorLightGrey;
+    background-color: $colorWhite;
 }
 
 
@@ -15,10 +15,10 @@
 .columns-container {
     display: table;
     width: 100%;
-    margin-top: @headerHeight;
-    padding-top: @padding;
+    margin-top: $headerHeight;
+    padding-top: $padding;
     z-index: 1;
-    min-height: @blockSize * 2;
+    min-height: $blockSize * 2;
 }
 
 .content {
@@ -46,7 +46,7 @@
     /* table fallback */
     .content {
         display: table-cell;    
-        border-right: 1px solid @colorLightGrey;
+        border-right: 1px solid $colorLightGrey;
     }
     .context {
         display: table-cell;    
@@ -63,12 +63,12 @@
 
 .footer {
     display: block;    
-    min-height: @blockSize;
-    border-top: 1px solid @colorLightGrey;
+    min-height: $blockSize;
+    border-top: 1px solid $colorLightGrey;
 }
 
 h3.background-text {
-    color: @colorLightGrey;
+    color: $colorLightGrey;
     text-transform: uppercase;
     font-size: 5em;
 }
