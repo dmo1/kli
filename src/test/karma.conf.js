@@ -14,25 +14,16 @@ module.exports = function(config) {
     // testing framework to use (jasmine/mocha/qunit/...)
     // as well as any additional frameworks (requirejs/chai/sinon/...)
     frameworks: [
-      'jasmine', 'fixture'
+      'jasmine'
     ],
     
-    //fixtures data
-    preprocessors: {
-      '**/*.html'   : ['html2js'],
-      '**/*.json'   : ['json_fixtures']
-    },
-    jsonFixturesPreprocessor: {
-      variableName: '__json__'
-    },
 
     // list of files / patterns to load in the browser
     files: [
       // bower:js
       // endbower
       'js/**/*.js',
-      'test/unit/**/*.js',
-      'test/unit/fixtures/**/*'
+      'test/unit/**/*.js'
     ],
 
     // list of files / patterns to exclude
