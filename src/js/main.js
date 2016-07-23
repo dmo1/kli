@@ -1,18 +1,16 @@
+/*
+ * @
+ */
 var Site = Site || {};
 Site.main = function () {
-    var root = 'http://jsonplaceholder.typicode.com';
-
-    animateLoading(true);
-    Site.ajax((root + '/posts'), printPostList);
-
-    document.querySelector('.modal .close').onclick = closeModal;
-    document.getElementById('show-modal').onclick = showModal;
-
+    Site.a.animateLoading(true);
+    Site.data.getPosts(printPostList);
+    Site.a.initAnimations();
 
     function printPostList(data) {
         var $postList = document.getElementById('post-list');
         $postList.innerHTML = '';
-        animateLoading(false);
+        Site.a.animateLoading(false);
 
         addOption($postList, "", "");
 
@@ -25,6 +23,7 @@ Site.main = function () {
         $postList.disabled = false;
     }
 
+    //private
     function addOption(select, value, text) {
         var option = document.createElement("option");
         option.text = text;
@@ -38,35 +37,18 @@ Site.main = function () {
             var $post = document.getElementById('post');
             $post.querySelector('h2').innerHTML = '';
             $post.querySelector('p').innerHTML = '';
-            animateLoading(true);
-            Site.ajax(root + '/posts/' + id, printPost);
+            Site.a.animateLoading(true);
+            Site.data.getSinglePost(id, printPost);
         }
     }
 
+    //private
     function printPost(data) {
         var $post = document.getElementById('post');
-        animateLoading(false);
+        Site.a.animateLoading(false);
         $post.querySelector('h2').innerHTML = data.title;
         $post.querySelector('p').innerHTML = data.body;
     }
-
-    function showModal() {
-        document.querySelector('html').classList.add('modal-window');
-    }
-
-    function closeModal(event) {
-        document.querySelector('html').classList.remove('modal-window');
-        event.stopPropagation();
-    }
-
-    function animateLoading(shouldAnimate) {
-        document.getElementById('post-list').disabled = shouldAnimate;
-        if (shouldAnimate) {
-            document.getElementsByClassName('spinner')[0].classList.remove('display-none');
-        } else {
-            document.getElementsByClassName('spinner')[0].classList.add('display-none');
-
-        }
-    }
-
-}();
+    
+};
+document.addEventListener( "DOMContentLoaded", Site.main );
