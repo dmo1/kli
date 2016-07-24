@@ -2,24 +2,20 @@
  * @
  */
 var Site = Site || {};
-Site.a = function () {
-    
+Site.a = {
     //any initialization code for animations goes here
-    function initAnimations(){
+    initAnimations: function () {
         document.querySelector('.modal .close').onclick = closeModal;
         document.getElementById('show-modal').onclick = showModal;
-    }
-
-    function showModal() {
+    },
+    showModal: function () {
         document.querySelector('html').classList.add('modal-window');
-    }
-
-    function closeModal(event) {
+    },
+    closeModal: function (event) {
         document.querySelector('html').classList.remove('modal-window');
         event.stopPropagation();
-    }
-
-    function animateLoading(shouldAnimate) {
+    },
+    animateLoading: function (shouldAnimate) {
         //disable select during the loading animation
         document.getElementById('post-list').disabled = shouldAnimate;
         if (shouldAnimate) {
@@ -28,5 +24,5 @@ Site.a = function () {
             document.getElementsByClassName('spinner')[0].classList.add('display-none');
         }
     }
-    
+
 };
